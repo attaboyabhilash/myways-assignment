@@ -14,7 +14,7 @@ function Hero() {
           </p>
         </div>
         <div className="button">
-          <Link to="/signup">Get Started</Link>
+          <Link to="/myways-assignment/signup">Get Started</Link>
         </div>
       </div>
     </div>

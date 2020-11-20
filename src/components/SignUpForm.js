@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { MdClose, MdArrowBack } from "react-icons/md"
 import { FaCheckCircle } from "react-icons/fa"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 function SignUpForm() {
+  const history = useHistory()
+
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
@@ -40,7 +42,7 @@ function SignUpForm() {
     return (
       <>
         <div className="signup-heading">
-          <Link to="/">
+          <Link to="/myways-assignment">
             <MdClose />
           </Link>
         </div>
@@ -109,10 +111,13 @@ function SignUpForm() {
   }
 
   const successful = () => {
+    setTimeout(() => {
+      history.push("/myways-assignment")
+    }, 1000)
     return (
       <>
         <div className="signup-heading">
-          <Link to="/">
+          <Link to="/myways-assignment">
             <MdClose />
           </Link>
         </div>
@@ -126,7 +131,7 @@ function SignUpForm() {
 
   return (
     <>
-      <Link to="/">
+      <Link to="/myways-assignment">
         <div className="shadow"></div>
       </Link>
       <div className="signup-form">

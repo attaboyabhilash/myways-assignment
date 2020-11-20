@@ -8,7 +8,10 @@ function LargeNavigation() {
     <div className="menu-bar">
       <div className="for-you-div" onClick={() => setDrop(drop => !drop)}>
         For You
-        <RiArrowDownSFill className="for-you" />
+        <RiArrowDownSFill
+          className="for-you"
+          style={drop && { transform: "rotate(180deg)" }}
+        />
         <div
           style={
             drop

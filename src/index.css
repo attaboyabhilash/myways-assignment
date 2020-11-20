@@ -66,6 +66,7 @@ nav img {
   margin-left: 3px;
   position: absolute;
   font-size: 1em;
+  transition: all 350ms ease-in-out;
 }
 
 .navigations div .instant-apply {
@@ -79,12 +80,28 @@ nav img {
 }
 
 .navigations .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigations .login button {
   background-color: #7ecb20;
-  margin-top: -5px;
-  padding: 5px 35px 27px;
+  padding: 0px 30px;
+  border: none;
+  font-size: 16px;
+  height: 38px;
+  outline: none;
   color: #fff;
+  font-family: "Open Sans", sans-serif;
   border-radius: 50px;
+  cursor: pointer;
   font-weight: 600;
+  transition: all 450ms ease-in-out;
+}
+
+.navigations .login button:hover {
+  transform: scale(1.12, 1.1);
 }
 
 .navigations .for-you-div {
@@ -480,9 +497,11 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 0.9em;
   }
 
-  .navigations .login {
+  .navigations .login button {
     font-size: 0.9em;
-    padding: 5px 25px 20px;
+    padding: 0px 25px;
+    height: 32px;
+    margin-top: -6px;
   }
 
   /* Hero Section */

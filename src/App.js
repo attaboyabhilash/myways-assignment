@@ -6,13 +6,13 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/myways-assignment">
           <Home />
         </Route>
-        <Route path="/signup">
+        <Route path="/myways-assignment/signup">
           <SignUp />
         </Route>
-        <Route path="/login">
+        <Route path="/myways-assignment/login">
           <LogIn />
         </Route>
       </Switch>

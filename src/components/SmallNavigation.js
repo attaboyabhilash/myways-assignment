@@ -18,7 +18,10 @@ function SmallNavigation() {
         <div className="navigs">
           <div className="for-you-div" onClick={() => setDrop(drop => !drop)}>
             For You
-            <RiArrowDownSFill className="for-you" />
+            <RiArrowDownSFill
+              className="for-you"
+              style={drop && { transform: "rotate(180deg)" }}
+            />
           </div>
           <div
             style={drop ? { display: "block" } : { display: "none" }}

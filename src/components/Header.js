@@ -7,16 +7,16 @@ import SmallNavigation from "./SmallNavigation"
 function Header() {
   return (
     <nav>
-      <Link to="/">
+      <Link to="/myways-assignment">
         <img src={MyWays} alt="myways-logo" />
       </Link>
       <div className="navigations">
         {window.screen.width > 950 ? <LargeNavigation /> : <SmallNavigation />}
-        <Link to="/signup" className="signup">
+        <Link to="/myways-assignment/signup" className="signup">
           SIGN UP
         </Link>
-        <Link to="/login" className="login">
-          LOGIN
+        <Link to="/myways-assignment/login" className="login">
+          <button>LOGIN</button>
         </Link>
       </div>
     </nav>
