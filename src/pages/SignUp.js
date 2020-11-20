@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react"
+import Header from "../components/Header"
+import Hero from "../components/Hero"
+import SignUpForm from "../components/SignUpForm"
 
-function Contact() {
-    return (
-        <div>
-            
-        </div>
-    )
+function SignUp() {
+  return (
+    <div>
+      <Header />
+      <Hero />
+      <SignUpForm />
+    </div>
+  )
 }
 
-export default Contact
+export default SignUp
