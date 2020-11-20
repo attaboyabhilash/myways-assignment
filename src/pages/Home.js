@@ -1,14 +1,12 @@
 import React from "react"
-import { useSelector } from "react-redux"
 import Header from "../components/Header"
-import { selectTheme } from "../features/theme/themeSlice"
+import Hero from "../components/Hero"
 
 function Home() {
-  const theme = useSelector(selectTheme)
-
   return (
     <div>
       <Header />
+      <Hero />
     </div>
   )
 }
