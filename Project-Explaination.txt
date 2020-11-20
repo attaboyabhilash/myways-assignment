@@ -1,0 +1,10 @@
+This is a short-hand assignment for MyWays Company.
+
+This project is designed to check the front-end capabilities therefore I haven't hooked it up with any database.
+At the front-end, I have utilized ReactJS as my framework to maintain the state and functionality of the project.
+In ReactJS , I have used technologies like :
+    - React Router
+    - React Functional Components with hooks
+    - React Icons
+
+This project is mobile-friendly as well and is hosted on github static pages platform.
