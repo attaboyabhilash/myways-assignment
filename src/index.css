@@ -141,10 +141,17 @@ nav img {
   left: 20px;
 }
 
+.close-bar {
+  position: absolute;
+  font-size: 1.6em;
+  top: 20px;
+  right: 20px;
+}
+
 .small-navig {
   position: absolute;
   z-index: 10;
-  width: 70%;
+  width: 80%;
   left: 0;
   top: 0;
   height: 100vh;
@@ -160,6 +167,27 @@ nav img {
   background-color: #ddd;
   padding: 20px 30px;
   font-size: 1em;
+  margin-bottom: 0.1em;
+}
+
+.small-navig .navigs .drop-down-small {
+  padding: 0px;
+}
+
+.navigs .drop-down-small ul {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.navigs .drop-down-small ul li {
+  background-color: #eee;
+  padding: 20px 30px;
+  border-bottom: 0.1em solid #fff;
+}
+
+.navigs .drop-down-small ul li:last-child {
+  border-bottom: none;
 }
 
 /* Hero Section */

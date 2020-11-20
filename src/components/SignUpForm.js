@@ -8,7 +8,7 @@ function SignUpForm() {
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [otpNumber, setOTPNumber] = useState(null)
+  const [otpNumber, setOTPNumber] = useState("")
   const [page, setPage] = useState("signup")
 
   const handleSubmit = e => {
@@ -25,9 +25,15 @@ function SignUpForm() {
   }
 
   const handleOTPEnter = () => {
-    if (otpNumber !== null) {
+    if (otpNumber !== "") {
       setPage("successful")
     }
+
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+    setPassword("")
+    setOTPNumber("")
   }
 
   const signupform = () => {
