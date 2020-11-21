@@ -365,8 +365,8 @@ form .forgot {
 }
 
 .signup-form .formik-flex {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .signup-form-div form button {
