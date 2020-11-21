@@ -150,63 +150,6 @@ nav img {
   margin-bottom: 0px;
 }
 
-/* Navigations Small */
-.menu {
-  position: absolute;
-  font-size: 1.6em;
-  top: 22.5px;
-  left: 20px;
-}
-
-.close-bar {
-  position: absolute;
-  font-size: 1.6em;
-  top: 20px;
-  right: 20px;
-}
-
-.small-navig {
-  position: absolute;
-  z-index: 10;
-  width: 80%;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  background-color: #fff;
-}
-
-.small-navig .navigs {
-  width: 100%;
-  margin-top: 70px;
-}
-
-.small-navig .navigs div {
-  background-color: #ddd;
-  padding: 20px 30px;
-  font-size: 1em;
-  margin-bottom: 0.1em;
-}
-
-.small-navig .navigs .drop-down-small {
-  padding: 0px;
-}
-
-.navigs .drop-down-small ul {
-  list-style-type: none;
-  padding-left: 0px;
-  margin: 0px;
-}
-
-.navigs .drop-down-small ul li {
-  background-color: #eee;
-  padding: 20px 30px;
-  border-bottom: 0.1em solid #fff;
-}
-
-.navigs .drop-down-small ul li:last-child {
-  border-bottom: none;
-}
-
 /* Hero Section */
 .hero {
   display: flex;
@@ -510,14 +453,18 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-left: 40px;
   }
 
+  .navigations {
+    padding-right: 0px;
+  }
+
   .navigations .signup {
-    padding-right: 20px;
+    padding-right: 10px;
     font-size: 0.9em;
   }
 
   .navigations .login button {
     font-size: 0.9em;
-    padding: 0px 25px;
+    padding: 0px 15px;
     height: 32px;
     margin-top: -6px;
   }
@@ -545,7 +492,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .form-div form input,
   .form-div form input[type="submit"] {
-    width: 95%;
     height: 45px;
   }
 
@@ -555,14 +501,9 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 500px;
   }
 
-  .signup-form-div {
-    width: 85%;
-    text-align: center;
+  .signup-form .signup-form-div {
+    width: 90%;
     margin: 50px auto;
-  }
-
-  .signup-form-div form .text-last {
-    margin-left: 10px;
   }
 
   .signup-form .otp-sent {
@@ -575,5 +516,63 @@ input[type="number"]::-webkit-outer-spin-button {
     width: fit-content;
     margin: 150px auto;
     text-align: center;
+  }
+
+  /* Navigations Small */
+
+  .menu {
+    position: absolute;
+    font-size: 1.6em;
+    top: 22.5px;
+    left: 20px;
+  }
+
+  .close-bar {
+    position: absolute;
+    font-size: 1.6em;
+    top: 20px;
+    right: 20px;
+  }
+
+  .small-navig {
+    position: absolute;
+    z-index: 10;
+    width: 80%;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  .small-navig .navigs {
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .small-navig .navigs div {
+    background-color: #ddd;
+    padding: 20px 30px;
+    font-size: 1em;
+    margin-bottom: 0.1em;
+  }
+
+  .small-navig .navigs .drop-down-small {
+    padding: 0px;
+  }
+
+  .navigs .drop-down-small ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+  }
+
+  .navigs .drop-down-small ul li {
+    background-color: #eee;
+    padding: 20px 30px;
+    border-bottom: 0.1em solid #fff;
+  }
+
+  .navigs .drop-down-small ul li:last-child {
+    border-bottom: none;
   }
 }
