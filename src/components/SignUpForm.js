@@ -2,41 +2,26 @@ import React, { useState } from "react"
 import { MdClose, MdArrowBack } from "react-icons/md"
 import { FaCheckCircle } from "react-icons/fa"
 import { Link, useHistory } from "react-router-dom"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
 
 function SignUpForm() {
   const history = useHistory()
-
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [otpNumber, setOTPNumber] = useState("")
   const [page, setPage] = useState("signup")
 
-  const handleSubmit = e => {
-    e.preventDefault()
-
-    console.log({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-    })
-
-    setPage("otp")
-  }
-
-  const handleOTPEnter = () => {
-    if (otpNumber !== "") {
-      setPage("successful")
-    }
-
-    setFirstName("")
-    setLastName("")
-    setEmail("")
-    setPassword("")
-    setOTPNumber("")
-  }
+  const SignupSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(3, "Minimum 3 character required")
+      .required("Required"),
+    lastName: Yup.string()
+      .min(3, "Minimum 3 character required")
+      .required("Required"),
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .min(6, "Minimum 6 character required")
+      .required("Required"),
+  })
 
   const signupform = () => {
     return (
@@ -49,42 +34,80 @@ function SignUpForm() {
         <div className="signup-form-div">
           <h2>SignUp</h2>
           <p>It's quick and easy</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={firstName}
-              placeholder="First Name"
-              onChange={e => setFirstName(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              value={lastName}
-              placeholder="Last Name"
-              onChange={e => setLastName(e.target.value)}
-              required
-              className="text-last"
-            />
-            <input
-              type="email"
-              value={email}
-              placeholder="Email"
-              onChange={e => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={e => setPassword(e.target.value)}
-              required
-            />
-            <input type="submit" value="SignUp" />
-          </form>
+          <Formik
+            initialValues={{
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                setPage("otp")
+                setSubmitting(false)
+                setEmail(values.email)
+                console.log(values)
+              }, 500)
+            }}
+          >
+            {({ errors, isSubmitting }) => (
+              <Form>
+                <div className="formik-flex">
+                  <div className="flex-first">
+                    <Field
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                    />
+                    <ErrorMessage
+                      name="firstName"
+                      component="small"
+                      style={{ color: "#FF0000" }}
+                    />
+                  </div>
+                  <div className="flex-last">
+                    <Field
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                    />
+                    <ErrorMessage
+                      name="lastName"
+                      component="small"
+                      style={{ color: "#FF0000" }}
+                    />
+                  </div>
+                </div>
+                <Field type="email" name="email" placeholder="Email" />
+                <ErrorMessage
+                  name="email"
+                  component="small"
+                  style={{ color: "#FF0000" }}
+                />
+                <Field type="password" name="password" placeholder="Password" />
+                <ErrorMessage
+                  name="password"
+                  component="small"
+                  style={{ color: "#FF0000" }}
+                />
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </Form>
+            )}
+          </Formik>
         </div>
       </>
     )
   }
+
+  const otpSchema = Yup.object().shape({
+    otpValue: Yup.string()
+      .min(6, "Minimum 6 character required")
+      .max(6, "Maximum 6 characters only")
+      .required("Required"),
+  })
 
   const otpform = () => {
     return (
@@ -94,17 +117,38 @@ function SignUpForm() {
         </div>
         <div className="otp-sent">
           <h2>OTP sent!</h2>
-          <input
-            type="number"
-            value={otpNumber}
-            placeholder="Enter your OTP"
-            onChange={e => setOTPNumber(e.target.value)}
-            required
-          />
-          <p>
-            One time Passcode sent to your Email ID - <b>{email}</b>
-          </p>
-          <button onClick={handleOTPEnter}>Enter</button>
+          <Formik
+            initialValues={{ otpValue: "" }}
+            validationSchema={otpSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                setPage("successful")
+                setSubmitting(false)
+                console.log(values)
+              }, 500)
+            }}
+          >
+            {({ errors, isSubmitting }) => (
+              <Form>
+                <Field
+                  type="number"
+                  name="otpValue"
+                  placeholder="Enter Your OTP"
+                />
+                <ErrorMessage
+                  name="otpValue"
+                  component="small"
+                  style={{ color: "#FF0000" }}
+                />
+                <p>
+                  One time Passcode sent to your Email ID - <b>{email}</b>
+                </p>
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </Form>
+            )}
+          </Formik>
         </div>
       </>
     )

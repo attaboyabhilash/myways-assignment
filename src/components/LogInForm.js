@@ -2,25 +2,19 @@ import React, { useState } from "react"
 import { MdClose } from "react-icons/md"
 import { FaCheckCircle } from "react-icons/fa"
 import { Link, useHistory } from "react-router-dom"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
 
 function LogInForm() {
   const history = useHistory()
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
   const [page, setPage] = useState("login")
 
-  const handleSubmit = e => {
-    e.preventDefault()
-
-    console.log({
-      email: email,
-      password: password,
-    })
-
-    setEmail("")
-    setPassword("")
-    setPage("successful")
-  }
+  const SignupSchema = Yup.object().shape({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .min(6, "Minimum 6 character required")
+      .required("Required"),
+  })
 
   const loginform = () => {
     return (
@@ -37,28 +31,46 @@ function LogInForm() {
           </div>
           <div className="form-div">
             <h4>Student</h4>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                value={email}
-                placeholder="Email"
-                onChange={e => setEmail(e.target.value)}
-                required
-              />
-              <input
-                type="password"
-                value={password}
-                placeholder="Password"
-                onChange={e => setPassword(e.target.value)}
-                required
-              />
-              <p className="forgot">Forgot Password?</p>
-              <input type="submit" value="LogIn" />
-              <p className="new-to-myways">
-                New To MyWays?{" "}
-                <Link to="/myways-assignment/signup">SignUp Here</Link>
-              </p>
-            </form>
+            <Formik
+              initialValues={{ email: "", password: "" }}
+              validationSchema={SignupSchema}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  setPage("Success")
+                  setSubmitting(false)
+                  console.log(values)
+                }, 500)
+              }}
+            >
+              {({ errors, isSubmitting }) => (
+                <Form>
+                  <Field type="email" name="email" placeholder="Email" />
+                  <ErrorMessage
+                    name="email"
+                    component="small"
+                    style={{ color: "#FF0000" }}
+                  />
+                  <Field
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="small"
+                    style={{ color: "#FF0000" }}
+                  />
+                  <p className="forgot">Forgot Password?</p>
+                  <button type="submit" disabled={isSubmitting}>
+                    Submit
+                  </button>
+                  <p className="new-to-myways">
+                    New To MyWays?{" "}
+                    <Link to="/myways-assignment/signup">SignUp Here</Link>
+                  </p>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
       </>

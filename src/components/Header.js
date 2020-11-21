@@ -11,7 +11,7 @@ function Header() {
         <img src={MyWays} alt="myways-logo" />
       </Link>
       <div className="navigations">
-        {window.screen.width > 950 ? <LargeNavigation /> : <SmallNavigation />}
+        {window.innerWidth > 950 ? <LargeNavigation /> : <SmallNavigation />}
         <Link to="/myways-assignment/signup" className="signup">
           SIGN UP
         </Link>

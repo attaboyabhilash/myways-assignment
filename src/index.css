@@ -277,7 +277,6 @@ nav img {
 .login-form .form-div {
   border: 1px solid #aaa;
   padding: 20px;
-  text-align: center;
 }
 
 .login-form .form-div h4 {
@@ -286,6 +285,7 @@ nav img {
   position: relative;
   margin-bottom: 30px;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .login-form .form-div h4::after {
@@ -301,9 +301,9 @@ nav img {
 }
 
 .form-div form input {
-  width: 338px;
+  width: 100%;
   height: 48px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   border: 1px solid #aaa;
   font-family: "Open Sans", sans-serif;
@@ -315,6 +315,7 @@ nav img {
 .form-div form .new-to-myways {
   margin: 25px auto;
   font-weight: 600;
+  width: fit-content;
 }
 
 form .new-to-myways a {
@@ -326,14 +327,14 @@ form .forgot {
   float: right;
   font-weight: 600;
   font-size: 15px;
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
-.form-div form input[type="submit"] {
-  width: 338px;
+.form-div form button {
+  width: 100%;
   height: 48px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   border: none;
   font-family: "Open Sans", sans-serif;
@@ -343,6 +344,21 @@ form .forgot {
   color: #fff;
   cursor: pointer;
   background-color: #7ecb20;
+}
+
+.form-div form button:disabled {
+  width: 100%;
+  height: 48px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0px 10px;
+  color: #ddd;
+  cursor: pointer;
+  background-color: #7ecb20a8;
 }
 
 /* SignUp */
@@ -368,30 +384,31 @@ form .forgot {
   float: right;
 }
 
-.signup-form-div {
+.signup-form .signup-form-div {
   width: 400px;
-  text-align: center;
   margin: 70px auto;
 }
 
 .signup-form-div h2 {
   margin: 0px;
   font-size: 1.7em;
+  text-align: center;
 }
 
 .signup-form-div p {
   font-size: 1.2em;
   margin-top: 7px;
+  text-align: center;
 }
 
 .signup-form-div form {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .signup-form-div form input {
   width: 100%;
   height: 48px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   border: 1px solid #aaa;
   font-family: "Open Sans", sans-serif;
@@ -400,18 +417,19 @@ form .forgot {
   padding: 0px 10px;
 }
 
-.signup-form-div form input[type="text"] {
-  width: 48%;
-}
-
-.signup-form-div form .text-last {
+.flex-last {
   margin-left: 15px;
 }
 
-.signup-form-div form input[type="submit"] {
+.signup-form .formik-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-form-div form button {
   width: 100%;
   height: 48px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   border: none;
   font-family: "Open Sans", sans-serif;
