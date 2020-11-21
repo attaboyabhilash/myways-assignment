@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/myways-assignment/static/css/main.f30ff37e.chunk.css",
+    "main.css": "/myways-assignment/static/css/main.d2ff8d8f.chunk.css",
     "main.js": "/myways-assignment/static/js/main.17fd0ef7.chunk.js",
     "main.js.map": "/myways-assignment/static/js/main.17fd0ef7.chunk.js.map",
     "runtime-main.js": "/myways-assignment/static/js/runtime-main.6c11b27b.js",
@@ -8,14 +8,14 @@
     "static/js/2.1e7b2c12.chunk.js": "/myways-assignment/static/js/2.1e7b2c12.chunk.js",
     "static/js/2.1e7b2c12.chunk.js.map": "/myways-assignment/static/js/2.1e7b2c12.chunk.js.map",
     "index.html": "/myways-assignment/index.html",
-    "static/css/main.f30ff37e.chunk.css.map": "/myways-assignment/static/css/main.f30ff37e.chunk.css.map",
+    "static/css/main.d2ff8d8f.chunk.css.map": "/myways-assignment/static/css/main.d2ff8d8f.chunk.css.map",
     "static/js/2.1e7b2c12.chunk.js.LICENSE.txt": "/myways-assignment/static/js/2.1e7b2c12.chunk.js.LICENSE.txt",
     "static/media/myways-logo.e3df143b.png": "/myways-assignment/static/media/myways-logo.e3df143b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6c11b27b.js",
     "static/js/2.1e7b2c12.chunk.js",
-    "static/css/main.f30ff37e.chunk.css",
+    "static/css/main.d2ff8d8f.chunk.css",
     "static/js/main.17fd0ef7.chunk.js"
   ]
 }
